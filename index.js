@@ -107,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function () {
       if (validateForm()) {
         storeDataInLocalStorage();
         displayStoredData();
-        alert('Details saved to local storage!');
       } else {
         alert('Please correct the errors before submitting.');
       }
