@@ -57,13 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('popupDob').style.display = 'none';
       }
       
-      if(checkOut.value !='true'){
-        document.getElementById('check').style.display = 'inline';
-        isValid = false;
-      } else {
-        document.getElementById('check').style.display = 'none';
-      }
-
       return isValid;
     };
 
@@ -74,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         email: emailInput.value,
         password: passwordInput.value, // Note: Storing plain passwords is not secure. Consider hashing in real-world cases.
         dob: dobInput.value,
-        check:checkOut.value
+        check:checkOut.checked
       };
       localStorage.setItem(userDetails.email, JSON.stringify(userDetails));
     };
@@ -87,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <th>Email</th>
         <th>Password</th>
         <th>Date of Birth</th>
-        <th>Accepted Term</th>
+        <th>Accepted Term?</th>
       </tr>`
         for (let i = 0; i < localStorage.length; i++) {
             let storedData = JSON.parse(localStorage.getItem(localStorage.key(i)));
@@ -97,8 +90,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td>${storedData.email}</td>
                     <td>${storedData.password}</td>
                     <td>${storedData.dob}</td>
-                    <td>${storedData.checkout}</td>
+                    <td>${storedData.check}</td>
                 </tr>`
+
             } else {
               ihtml += `<p>No details stored yet.</p>`;
             }
