@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         email: emailInput.value,
         password: passwordInput.value, // Note: Storing plain passwords is not secure. Consider hashing in real-world cases.
         dob: dobInput.value,
-        check:checkOut.checked
+        check:checkOut.checked 
       };
       localStorage.setItem(userDetails.email, JSON.stringify(userDetails));
     };
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td>${storedData.email}</td>
                     <td>${storedData.password}</td>
                     <td>${storedData.dob}</td>
-                    <td>${storedData.check}</td>
+                    <td>${storedData.check }</td>
                 </tr>`
 
             } else {
